@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 7</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; background-color: pink; }
+        .question { font-size: 24px; margin: 20px; color: red; }
+        .btn { padding: 15px; font-size: 20px; margin: 5px; cursor: pointer; border: none; background-color: red; color: white; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <h2 class="question">Mujhe subah uthna pasand hai ya der raat tak jagna?</h2>
+    <button class="btn" onclick="checkAnswer('Jaldi uthna 🌞')">Jaldi uthna 🌞</button><br><br><button class="btn" onclick="checkAnswer('Der raat tak jagna 🌙')">Der raat tak jagna 🌙</button><br><br><button class="btn" onclick="checkAnswer('Jab neend khule tab uthna 😴')">Jab neend khule tab uthna 😴</button><br><br><button class="btn" onclick="checkAnswer('Koi fix time nahi 🕒')">Koi fix time nahi 🕒</button><br><br>
+    <script>
+        function checkAnswer(selected) {
+            let correctAnswer = "Der raat tak jagna 🌙";
+            let score = localStorage.getItem('score') ? parseInt(localStorage.getItem('score')) : 0;
+            if (selected === correctAnswer) { score += 1; }
+            localStorage.setItem('score', score);
+            window.location.href = "question8.html";
+        }
+    </script>
+</body>
+</html>

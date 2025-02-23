@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; background-color: lightblue; }
+        h1 { font-size: 40px; color: red; }
+        .remark { font-size: 30px; margin-top: 20px; }
+        .btn { padding: 15px; font-size: 20px; margin: 5px; cursor: pointer; border: none; background-color: red; color: white; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Your Score: <span id="score"></span>/10</h1>
+    <p class="remark" id="remark"></p>
+    <button class="btn" onclick="window.location.href='index.html'">Try Again</button>
+
+    <script>
+        let score = localStorage.getItem('score') ? parseInt(localStorage.getItem('score')) : 0;
+        document.getElementById('score').innerText = score;
+
+        let remark = "";
+        if (score >= 8) remark = "You know me very well! ❤️";
+        else if (score >= 5) remark = "You know me a bit, but can do better! 😊";
+        else remark = "Oh no! You need to know me more! 😢";
+
+        document.getElementById('remark').innerText = remark;
+        localStorage.clear();
+    </script>
+</body>
+</html>
